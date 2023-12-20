@@ -111,7 +111,7 @@ staat genoemd in bovenstaande model summary.
 batch_size = 4096 # 10 originally  # Larger can mean faster training (especially when using the gpu: 4096),
 # but requires more system memory. Select it properly for your system.
 
-epochs = 1000  # it's probably more then you like to wait for,
+epochs = 500  # it's probably more then you like to wait for,
 # but you can interrupt training anytime with CTRL+C
 
 learningrate = 0.01
