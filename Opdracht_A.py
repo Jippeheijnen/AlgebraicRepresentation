@@ -83,13 +83,16 @@ Probeer in dat geval te beargumenteren waarom die configuratie een goede keuze i
 
 
 def buildMyModel(inputShape):
+    """
+    Dit levert een accuracy van ~ 0.97
+    """
     model = keras.Sequential(
         [
             keras.Input(shape=inputShape),
             layers.Dropout(.1),
             layers.Dense(units=100, activation='tanh'),
             layers.Dense(units=20, activation='tanh'),
-            layers.Dense(units=num_classes, activation='relu')
+            layers.Dense(units=num_classes, activation='sigmoid')
         ]
     )
     return model
@@ -108,10 +111,10 @@ staat genoemd in bovenstaande model summary.
 """
 # Train the model
 """
-batch_size = 4096 # 10 originally  # Larger can mean faster training (especially when using the gpu: 4096),
+batch_size = 2048 # 10 originally  # Larger can mean faster training (especially when using the gpu: 4096),
 # but requires more system memory. Select it properly for your system.
 
-epochs = 500  # it's probably more then you like to wait for,
+epochs = 1000  # it's probably more then you like to wait for,
 # but you can interrupt training anytime with CTRL+C
 
 learningrate = 0.01

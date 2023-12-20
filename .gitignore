@@ -79,6 +79,9 @@ target/
 .idea/
 venv/
 
+#project stuff
+myWeights.h5
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
